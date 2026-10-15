@@ -1,0 +1,18 @@
+<div class="orders">
+    <h1>Мои заказы</h1>
+
+    <input type="search" id="orders-search" placeholder="Поиск по заказам">
+
+    <div id="orders-list">
+        {foreach $orders as $order}
+            <div class="order">
+                <h3><a href="{$order.id}/">{$order.title}</a></h3>
+                <span class="status">{$order.status}</span>
+            </div>
+        {foreachelse}
+            <p>У вас пока нет заказов.</p>
+        {/foreach}
+    </div>
+</div>
+
+<script src="{$wa_app_static_url}js/orders.js"></script>
